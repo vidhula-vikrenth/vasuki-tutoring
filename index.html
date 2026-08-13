@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vasuki's Tutoring | 1-to-1 Online Physics, Chemistry & Maths</title>
+  
+  <!-- Warm Minimalist Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* Ivory & Dark Brown Warm Neutral Palette */
+    :root {
+      --bg-color: #FDFBF7;         /* Soft Cream Ivory */
+      --card-bg: #F5F0EB;        /* Warm Muted Neutral */
+      --card-hover: #ECE4DC;     
+      --primary-brown: #3C2A21;  /* Deep Dark Brown */
+      --accent-brown: #6A4B35;   /* Medium Warm Brown */
+      --text-main: #2C1D11;      /* Dark Charcoal/Brown Text */
+      --text-muted: #5E4E42;     /* Muted Brown */
+      --white: #FFFFFF;
+      --border: #E2D7CD;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.7;
+      scroll-behavior: smooth;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+    }
+
+    /* Header / Hero */
+    header {
+      background-color: var(--primary-brown);
+      color: var(--white);
+      text-align: center;
+      padding: 4.5rem 1.5rem 3.5rem;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      letter-spacing: 1.5px;
+      margin-bottom: 0.3rem;
+      color: #FDFBF7;
+    }
+
+    header .subtitle {
+      font-size: 1.25rem;
+      color: #E6D2C4;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+    }
+
+    header .contact-email {
+      font-size: 0.95rem;
+      color: #D3B8A5;
+      letter-spacing: 0.5px;
+    }
+
+    header .contact-email a {
+      color: #E6D2C4;
+      text-decoration: none;
+    }
+
+    /* Sticky Navigation */
+    nav {
+      background-color: var(--accent-brown);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    }
+
+    .nav-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.8rem 1rem;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin: 0.4rem 0.9rem;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 500;
+      transition: opacity 0.3s ease;
+    }
+
+    nav a:hover {
+      opacity: 0.75;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+
+    section {
+      margin-bottom: 4.5rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      color: var(--primary-brown);
+      text-align: center;
+      margin-bottom: 0.3rem;
+    }
+
+    .section-subtitle {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 2.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Grid Layouts */
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Cards */
+    .card {
+      background-color: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2rem;
+    }
+
+    .card h3 {
+      font-size: 1.6rem;
+      color: var(--primary-brown);
+      margin-bottom: 0.8rem;
+    }
+
+    .card ul {
+      list-style-type: square;
+      padding-left: 1.2rem;
+      color: var(--text-muted);
+    }
+
+    .card ul li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      text-align: center;
+      background-color: var(--white);
+      border-left: 4px solid var(--accent-brown);
+      padding: 1.5rem 2rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: var(--text-muted);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .quote-box span {
+      display: block;
+      margin-top: 0.5rem;
+      font-style: normal;
+      font-weight: 600;
+      color: var(--primary-brown);
+    }
+
+    /* Custom Past Papers Banner */
+    .highlight-card {
+      background: linear-gradient(135deg, #F5F0EB 0%, #EFE7DF 100%);
+      border-left: 5px solid var(--accent-brown);
+      border-radius: 12px;
+      padding: 2.5rem;
+    }
+
+    .highlight-card h3 {
+      font-size: 1.8rem;
+      color: var(--primary-brown);
+      margin-bottom: 1rem;
+    }
+
+    .highlight-card p {
+      font-size: 1.02rem;
+      color: var(--text-main);
+      margin-bottom: 1rem;
+    }
+
+    /* Pricing Section */
+    .price-card {
+      background-color: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 2.2rem 1.8rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+    }
+
+    .price-amount {
+      font-size: 2.4rem;
+      color: var(--primary-brown);
+      font-weight: 700;
+      margin: 1rem 0;
+    }
+
+    /* Testimonials Grid */
+    .testimonial-card {
+      background-color: var(--white);
+      border-radius: 12px;
+      padding: 1.8rem;
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+    }
+
+    .testimonial-title {
+      font-size: 1.3rem;
+      color: var(--accent-brown);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .testimonial-text {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .testimonial-author {
+      font-weight: 600;
+      color: var(--primary-brown);
+      font-size: 0.9rem;
+    }
+
+    .testimonial-subjects {
+      font-size: 0.8rem;
+      color: var(--accent-brown);
+      font-weight: 500;
+    }
+
+    /* Contact Form */
+    .form-container {
+      background-color: var(--white);
+      padding: 2.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    .form-group {
+      flex: 1;
+      margin-bottom: 1.2rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: var(--primary-brown);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.85rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      font-family: inherit;
+      font-size: 0.95rem;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent-brown);
+      background-color: var(--white);
+    }
+
+    button.btn-submit {
+      width: 100%;
+      background-color: var(--primary-brown);
+      color: var(--white);
+      padding: 1rem;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.btn-submit:hover {
+      background-color: var(--accent-brown);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      background-color: var(--primary-brown);
+      color: #E6D2C4;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 650px) {
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+      header h1 {
+        font-size: 2.4rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Header -->
+  <header>
+    <h1>Vasuki's Tutoring</h1>
+    <p class="subtitle">1-to-1 Online Physics, Chemistry & Maths Tutoring</p>
+    <p class="subtitle" style="font-size: 1.05rem;">by Dr Vasuki Ramachandran</p>
+    <p class="contact-email">Email: <a href="mailto:vasukitutoring@gmail.com">vasukitutoring@gmail.com</a></p>
+  </header>
+
+  <!-- Sticky Navigation -->
+  <nav>
+    <div class="nav-container">
+      <a href="#about">About Me</a>
+      <a href="#method">Method & Offer</a>
+      <a href="#subjects">Subjects</a>
+      <a href="#past-papers">Past Papers</a>
+      <a href="#pricing">Rates</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#enquire">Book / Enquire</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- About Me Section -->
+    <section id="about">
+      <h2 class="section-title">About Me</h2>
+      <p class="section-subtitle">Academic Qualifications & Experience</p>
+
+      <div class="grid-2" style="margin-bottom: 2rem;">
+        <div class="card">
+          <h3>Qualifications</h3>
+          <ul>
+            <li><strong>PhD in Physics</strong> — Sussex University, Brighton, UK</li>
+            <li><strong>MPhil in Physics</strong> — Anna University, Chennai, India</li>
+            <li><strong>MSc & BSc in Physics</strong> — Madras University, Chennai, India</li>
+            <li><strong>PTLLS Level 4</strong> (Learning and Teaching) — Leeds City College, UK</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Background</h3>
+          <p>I am a retired Research Scientist with over 17 years of experience in academic research and university teaching in Physics and Engineering. I live in Leeds and have been successfully tutoring online for over 6 years.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <p style="margin-bottom: 1rem;">Prior to my PhD, I was a voluntary researcher in Liquid Crystal studies at Lancaster University and in Astrophysics at Liverpool John Moores University. I also worked as a Physics lecturer at two universities in Tamil Nadu, India.</p>
+        <p style="margin-bottom: 1rem;">In the UK, my vast research and teaching experience across multi-disciplinary projects collaborated with leading industries, providing real-time insight into how science and engineering are applied in practice. I have taught masters modules, supervised research projects, and mentored doctoral students.</p>
+        <p>Having gained 17+ years of academic research experience, I also offer review services for academic articles and scientific manuscripts.</p>
+      </div>
+
+      <div class="quote-box">
+        “Anyone who has never made a mistake has never tried anything new.”
+        <span>— Albert Einstein</span>
+      </div>
+    </section>
+
+    <!-- Method & What I Offer Section -->
+    <section id="method">
+      <h2 class="section-title">Tutoring Approach & Method</h2>
+      <p class="section-subtitle">Inquiry-Based Learning for Confident, Independent Students</p>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <p style="margin-bottom: 1rem;">My goal is to enable tutees to turn into <strong>Confident & Independent learners</strong> and attain their highest academic potential in Physics, Chemistry, and Maths.</p>
+        <p>The student's prior knowledge is assessed, gaps are identified, and support is tailored to their personal learning pace. Using an <strong>inquiry-based learning method</strong>, students are taught how to solve problems while strictly adhering to exam board specifications.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>What I Offer</h3>
+          <ul>
+            <li>Inquiry-based learning</li>
+            <li>Bespoke learning plans</li>
+            <li>Continuous support & encouragement</li>
+            <li>Exam preparation & technique</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Additional Support</h3>
+          <ul>
+            <li>Coaching in weak areas</li>
+            <li>School homework guidance</li>
+            <li>Clarifying doubts outside sessions</li>
+            <li>Interactive online sessions</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Exam Boards Covered</h3>
+          <ul>
+            <li><strong>AQA</strong></li>
+            <li><strong>EDEXCEL</strong></li>
+            <li><strong>OCR</strong></li>
+            <li><strong>CIE</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="quote-box">
+        “Dream, dream, dream. Dreams transform into thoughts and thoughts result in action.”
+        <span>— A. P. J. Abdul Kalam</span>
+      </div>
+    </section>
+
+    <!-- Subjects Offered Section -->
+    <section id="subjects">
+      <h2 class="section-title">Subjects & Levels</h2>
+      <p class="section-subtitle">Tailored Guidance for High School & Sixth Form</p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Physics</h3>
+          <ul>
+            <li>A Level</li>
+            <li>IB (International Baccalaureate)</li>
+            <li>GCSE</li>
+            <li>IGCSE</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Chemistry</h3>
+          <ul>
+            <li>A Level</li>
+            <li>GCSE (Triple Award & Combined)</li>
+            <li>IGCSE</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Mathematics</h3>
+          <ul>
+            <li>Mechanics Part (A Level Maths)</li>
+            <li>GCSE Maths</li>
+            <li>IGCSE Maths</li>
+            <li>Additional Maths</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Past Papers Feature -->
+    <section id="past-papers">
+      <div class="highlight-card">
+        <h3>Custom Past Papers & Student-Tailored Material</h3>
+        <p><strong>Tailored Exam Preparation:</strong> Standard past papers can sometimes be overwhelming or miss a student's specific areas for growth.</p>
+        <p>Dr Vasuki carefully studies older past examination papers and extracts key syllabus patterns to create <strong>custom-crafted practice papers</strong>. These materials are specially adjusted to match each student's current proficiency level, allowing them to systematically build problem-solving skills and master challenging topics before facing final exams.</p>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing">
+      <h2 class="section-title">Hourly Charges</h2>
+      <p class="section-subtitle">1-to-1 Online Tutoring Rates</p>
+
+      <div class="grid-2">
+        <div class="price-card">
+          <h3 class="serif" style="font-size: 1.8rem;">GCSE / IGCSE</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">Physics, Chemistry & Maths</p>
+          <div class="price-amount">£30 – £35 <span style="font-size: 1rem; font-weight: normal; color: var(--text-muted);">/ hour</span></div>
+        </div>
+
+        <div class="price-card" style="border: 2px solid var(--accent-brown); background-color: var(--card-bg);">
+          <h3 class="serif" style="font-size: 1.8rem;">A Level / IB</h3>
+          <p style="color: var(--text-muted); margin-top: 0.5rem;">Physics, Chemistry & Mechanics (A Level Maths)</p>
+          <div class="price-amount">£40 – £50 <span style="font-size: 1rem; font-weight: normal; color: var(--text-muted);">/ hour</span></div>
+        </div>
+      </div>
+
+      <div class="quote-box" style="margin-top: 2.5rem;">
+        “Nothing in life is to be feared, it is only to be understood. Now is the time to understand more, so that we may fear less.”
+        <span>— Marie Curie</span>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <h2 class="section-title">Testimonials</h2>
+      <p class="section-subtitle">Feedback from Tutees & Parents</p>
+
+      <div class="grid-2">
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-title">"A real treasure to find"</div>
+            <p class="testimonial-text">Vasuki is a dedicated teacher who possesses a wealth of knowledge and a strong passion for the subjects she teaches. She is committed to thoroughly preparing her students for each lesson, and I wholeheartedly recommend her. I am truly thankful for the invaluable guidance and kindness she has shown to my children. Vasuki is a thoughtful, inquiry-oriented teacher. Highly intelligent and articulate in her subject specialty. Vasuki is consistently kind and patient throughout the lessons, a real treasure to find.</p>
+          </div>
+          <div>
+            <div class="testimonial-author">Nuala, Leeds</div>
+            <div class="testimonial-subjects">GCSE Physics & Chemistry (Triple Award), A Level Physics & Chemistry</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-title">"Patience, Flexibility and Expertise"</div>
+            <p class="testimonial-text">Both my children were tutored by Vasuki for their GCSEs, primarily for maths. However she can also teach physics and chemistry and showed great flexibility - mixing and matching sessions as needed. She took time to get to know them, explained subjects clearly and helped them develop their skills in problem solving and analysis as well as their level of knowledge. Consequently both felt more confident and got good results. We really appreciated Vasuki's patience, flexibility and expertise and highly recommend her.</p>
+          </div>
+          <div>
+            <div class="testimonial-author">Emma Morrall, Leeds</div>
+            <div class="testimonial-subjects">GCSE Physics & Chemistry (Trilogy), GCSE Maths</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-title">"Jumped 2 grades above"</div>
+            <p class="testimonial-text">Our daughter was tutored by Vasuki for her GCSE maths and physics this past year, we were very impressed that with Vasuki's dedication and hard work our daughter jumped 2 grades above predicted grade in the end. This was purely due to Vasuki's sheer dedication, commitment and genuine interest in her pupil's performance. Vasuki is always prepared for the sessions, communicates well in advance, gives constructive and useful feedback, builds a rapport quickly with the pupil and eases them into work ethic required for the subjects. Highly recommend Vasuki, she is also very reasonably priced for the quality of tutoring.</p>
+          </div>
+          <div>
+            <div class="testimonial-author">Preethi Burnett, Leeds</div>
+            <div class="testimonial-subjects">GCSE Maths</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-title">"Structured and engaging"</div>
+            <p class="testimonial-text">My daughter had great support with Chem and Physics during GCSE and achieved grade 9 in both. She is continuing with Vasuki for A level Physics and Chemistry. Vasuki conducts the sessions in a structured and engaging manner and helps with any queries that my daughter has with school work or question papers. Vasuki is very passionate about the subjects and takes time to have focused discussions on challenging topics and her explanations are clear and easy to understand.</p>
+          </div>
+          <div>
+            <div class="testimonial-author">Priya Vijay, Kingston upon Thames</div>
+            <div class="testimonial-subjects">GCSE Physics & Chemistry (Triple Award), A Level Physics & Chemistry</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-title">"Instrumental in helping to achieve a great result"</div>
+            <p class="testimonial-text">I want to express my gratitude for your exceptional support and guidance during my son's final A-level exams. Your clear explanations and dedication in addressing his doubts were instrumental in helping him achieve a great result in physics. I also appreciate the guidance you provided me regarding university admissions, which was very helpful. I highly recommend you as a teacher for your expertise and support.</p>
+          </div>
+          <div>
+            <div class="testimonial-author">Sridevi Anbalagan, Halifax</div>
+            <div class="testimonial-subjects">A Level Physics</div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div>
+            <div class="testimonial-title">"Prepared lessons based on needs"</div>
+            <p class="testimonial-text">Ms. Vasuki put lots of effort in preparing and delivering the lessons. She prepared the lessons based on my son's need which helped him to clear his doubts. Also her lessons are covered with lots of supporting materials which are additional bonus to my son. I would thoroughly recommend Ms. Vasuki for physics tutoring for A level preparations.</p>
+          </div>
+          <div>
+            <div class="testimonial-author">Chandra Bose, London</div>
+            <div class="testimonial-subjects">A Level Physics</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Inquiry / Contact Form -->
+    <section id="enquire">
+      <h2 class="section-title">Book a Free Trial / Enquire</h2>
+      <p class="section-subtitle">Get in touch to check availability or ask any questions</p>
+
+      <div class="form-container">
+        <!-- REPLACE THE ACTION URL WITH YOUR UNIQUE FORMSPREE ENDPOINT -->
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first-name">First Name</label>
+              <input type="text" id="first-name" name="first_name" required placeholder="e.g. Sarah">
+            </div>
+            <div class="form-group">
+              <label for="surname">Surname</label>
+              <input type="text" id="surname" name="surname" required placeholder="e.g. Smith">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" required placeholder="e.g. sarah@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" required placeholder="e.g. 07123 456789">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Please mention the subject, level (GCSE/A Level), and exam board..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+        </form>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; Vasuki's Tutoring | Dr Vasuki Ramachandran. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
